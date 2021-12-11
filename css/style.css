@@ -51,19 +51,6 @@ li {
   transform: rotate(-45deg);
   transform-origin: bottom left;
 }
-/* .menu-toggle:hover li:first-child {
-  transform: rotate(45deg);
-  transform-origin: top left;
-}
-.menu-toggle:hover li:nth-child(2) {
-  background-color: transparent;
-  transform: rotate(90deg);
-  transform-origin: center;
-}
-.menu-toggle:hover li:last-child {
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
-} */
 a {
   text-decoration: none;
   color: var(--white);
@@ -79,8 +66,8 @@ h1 {
 .main-color {
   color: var(--main-light);
 }
-.overlay {
-  /* need to repair */
+/* need to repair */ 
+ .overlay {
   width: 100%;
   height: 100%;
   left: 0;
@@ -88,18 +75,17 @@ h1 {
   position: absolute;
   z-index: -1;
   background-color: rgba(26, 21, 21, 0.247);
-}
+} 
 /*End   Global Styles */
 /* Start Header */
 header {
-  background-image: url("../images/header_stock.png");
+  background-image: url('../images/header_stock.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-origin: content-box;
   min-height: 100vh;
   position: relative;
   z-index: 0;
-
 }
 
 nav {
