@@ -1,0 +1,644 @@
+/* Global Variables */
+:root {
+  --main-light: #09c;
+  --main-light-darker: rgba(17, 152, 197, 0.966);
+  --white: #fff;
+}
+
+/*Start Global Styles */
+::-webkit-scrollbar-thumb{
+    z-index: 12;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.cap {
+  text-transform: uppercase;
+}
+.overlay {
+    background: rgba(49, 55, 61, .9);
+    width: 100%;
+    height: 100%
+}
+
+.hidden {
+    display: none
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.menu-toggle {
+  cursor: pointer;
+}
+.menu-toggle li {
+  width: 40px;
+  background-color: var(--main-light);
+  height: 5px;
+  margin-bottom: 8px;
+  transition: transform 1s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.first{
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.second{
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+.third{
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+/* .menu-toggle:hover li:first-child {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.menu-toggle:hover li:nth-child(2) {
+  background-color: transparent;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+.menu-toggle:hover li:last-child {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+} */
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.main-color {
+  color: var(--main-light);
+}
+.overlay {
+  /* need to repair */
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(26, 21, 21, 0.247);
+}
+/*End   Global Styles */
+/* Start Header */
+header {
+  background-image: url("/images/header_stock.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+
+}
+
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--white);
+}
+.toggle{
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-top: 9px;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100px;
+  margin-top: 9px;
+  position: relative;
+}
+.menu-toggle:hover>.nav-menu ul {
+  opacity: 1;
+}
+
+.nav-menu ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
+  position: absolute;
+  top: -50px;
+  left: -50%;
+  width: 500px;
+  min-height: 30px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition:opacity .9s, top .9s ;
+  background-color: var(--main-light);
+}
+.nav-menu ul li a{
+  transition: all .5s;
+  /* pointer-events: none */
+}
+.nav-menu ul li a:hover{
+  color: var(--main-light);
+  background-color: white;
+}
+.header-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+.header-info .box {
+  width: 700px;
+  padding: 10px;
+}
+.header-info .box h1 {
+  font-size: 70px;
+  color: var(--white);
+  font-weight: 700;
+}
+.header-info .box p {
+  padding: 15px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.header-info .box .buttons {
+  width: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.header-info .box .buttons button {
+  background-color: transparent;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--white);
+  padding: 10px 20px;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
+}
+.header-info .box .buttons button:hover {
+  background-color: var(--main-light);
+  color: var(--white);
+  border: 1px solid var(--main-light-darker);
+}
+
+.down {
+  background-color: transparent;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--white);
+  color: var(--main-light);
+  transition: background-color 0.5s, color 0.5s;
+}
+.down:hover {
+  background-color: var(--main-light);
+}
+/* End   Header */
+
+/* Start services */
+.services {
+  padding-top: 60px;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.services .box i {
+  color: var(--main-light);
+  height: 100px;
+  width: 100px;
+  border: 2px solid var(--main-light-darker);
+  border-radius: 50%;
+  margin: 0px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.7s, background-color 0.7s;
+}
+.services .box i:hover {
+  color: var(--white);
+  background-color: var(--main-light);
+}
+.services .box h3 {
+  font-size: 16px;
+  color: #3b434c;
+}
+.services .box p {
+  font-size: 14px;
+  color: #3b434c;
+}
+/* End   services */
+
+/* Start Subscribe */
+.subscribe {
+  background-image: url("/images/subscribe.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.subscribe form {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+}
+.subscribe form input[type="email"] {
+  width: 60%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: var(--main-light);
+}
+.subscribe form input[type="email"]::placeholder {
+  transition: opacity 0.5s;
+}
+.subscribe form input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
+.subscribe form input[type="submit"] {
+  width: 30%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--main-light);
+  font-weight: bold;
+}
+.subscribe form input[type="submit"]:hover {
+  background-color: rgb(53, 154, 187);
+}
+/* End   Subscribe */
+
+/* Start Our Works */
+.our-works {
+  padding-top: 60px;
+}
+.our-works h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #3b434c;
+}
+.our-works p {
+  width: 600px;
+  text-align: center;
+  margin: 10px auto;
+  line-height: 1.7;
+  color: #3b434c;
+  padding: 10px;
+}
+.our-works ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.our-works ul li {
+  border: 1px solid var(--main-light-darker);
+  padding: 5px 20px;
+  color: var(--main-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+.our-works ul li:hover {
+  background-color: var(--main-light);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.our-works .gallery .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.active {
+  background-color: var(--main-light);
+  color: white !important;
+  cursor: unset;
+  border: 1px solid var(--main-light-darker) !important;
+}
+.our-works .gallery .images .image {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.our-works .gallery .images img {
+  width: 100%;
+  height: 300px;
+}
+.back {
+  background-color: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.image:hover .back {
+  opacity: 1;
+}
+.back h2 {
+  color: white;
+}
+.back p {
+  width: 100%;
+  color: white;
+}
+.back button {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.5s;
+  color: var(--main-light);
+  background-color: white;
+  font-weight: bold;
+}
+.back button:hover {
+  color: white;
+  background-color: var(--main-light);
+}
+/* End   Our Works */
+
+/* Start testimonials */
+.testimonials {
+  background-image: url("../images/testimonials.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  min-height: 300px;
+  z-index:0;
+  color: white;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+.testimonials .sliders .slider {
+  padding: 10px;
+  min-width: 100%;
+  text-align: center;
+}
+.testimonials .sliders .slider img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--main-light);
+  padding: 5px;
+  background-color: white;
+}
+.testimonials .sliders .slider p {
+  min-width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.left , .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: var(--main-light);
+    border: 1px solid var(--main-light-darker);
+    background-color: white;
+    padding: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 556;
+}
+.left{
+    left: 150px;
+}
+.right{
+    right: 150px;
+}
+/* end   testimonials */
+
+/* Start Our Teams */
+.Ourteam{
+   width: 1200px;
+   margin: auto;
+   text-align: center;
+   padding-top: 60px;
+   
+}
+.Ourteam h2{
+    font-size: 35px;
+}
+.Ourteam p{
+
+    margin-bottom:40px;
+    margin-top: 20px;
+}
+
+.Ourteam .image img{
+    filter: gray;
+    filter: grayscale(1);
+    height: 300px; 
+    transition: all .6s;   
+}
+.Ourteam .image{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.Ourteam .image::after{
+    content: "";
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--main-light);
+    transition: all .6s;
+}
+.Ourteam .team:hover  .image::after{
+    transform: translateY(-15px);
+    width: 105%;
+}
+.Ourteam .team:hover img {
+    filter: none;
+    filter: grayscale(0);
+    transform: translateY(-15px)
+}
+.teams{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+.teams .team{
+    color: #888;
+    transition: all .7s;
+}
+.team:hover{
+    color:#555;
+}
+.icons{
+    margin: 10px 0px;
+    transition: all .6s;
+}
+.teams .team:hover .fa-facebook {
+    color: #3b5998
+}
+
+.teams .team:hover .fa-twitter {
+    color: #55acee
+}
+
+.teams .team:hover .fa-google-plus {
+    color: #dc4e41
+}
+/* end   Our Teams */
+
+/* Start Contact */
+.contact {
+    background-image: url('../images/city.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    min-height: 500px;
+    z-index: 0;
+    text-align: center;
+}
+
+.contact .overlay {
+    padding: 50px 0;
+    color: #FFF;
+    background-color: #30383ebd;
+}
+.contact form {
+    width: 700px;
+    margin: 50px auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact form input[type="text"],
+.contact form input[type="email"] {
+    width: 48%;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 1px solid #CCC;
+}
+
+.contact form textarea {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 140px;
+    border-radius: 10px;
+    border: 1px solid #CCC
+}
+.contact form .info {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.contact form .info button {
+    padding: 10px;
+    width: 200px;
+    border: 1px s;
+    background-color: var(--main-light);
+    border: none;
+    color: #FFF;
+    border-radius: 10px;
+    font-size: 14px
+}
+/* End Contact */
+
+/* Start Footer */
+
+.footer {
+    background-color: #3b434c;
+    color: #FFF;
+    overflow: hidden;
+    padding: 30px 0
+}
+
+.footer .copyright {
+    float: left
+}
+
+.footer .design {
+    float: right
+}
+
+/* End Footer */
+
+
+
+.contact form .info .form-icons i {
+    background-color: #9da1a5;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    border-radius: 50%;
+}
+
+.contact form .info  i:first-child  {
+    background-color: #3b5998;
+    color: white;
+}
+
+.contact form .info  i:nth-child(2) {
+    background-color: #55acee;
+    color: white;
+
+}
+
+.contact form .info  i:last-child {
+    background-color: #dc4e41;
+    color: white;
+
+}
